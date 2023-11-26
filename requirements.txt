@@ -1,9 +1,8 @@
 ## LLMs
-tiktoken
 openai
 
-## Google
-googlemaps
 
 # dev
 python-dotenv==1.0.0
+
+requests

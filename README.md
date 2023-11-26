@@ -4,6 +4,12 @@
 
 Navigating through marketing data can be overwhelming, often requiring extensive time and effort to find relevant information. This project aims to develop an AI-powered application to simplify these tasks, providing marketers with deeper insights. This allows them to concentrate on refining marketing strategies instead of getting bogged down by tedious and repetitive work.
 
+### Architecture
+
+```
+Google map text search ---> get id --> get details
+```
+
 ### Roadmap
 
 - [ ] Integration of ChatGPT or other open-source LLMs (Maybe)
