@@ -1,0 +1,5 @@
+    text = """There seems to be a typographical error in the given location, "countra consta county, california." However, assuming you meant "contra costa county, california," here are some cities within that county:
+
+            ['Antioch', 'Concord', 'Richmond', 'San Ramon', 'Walnut Creek', 'Pittsburg', 'Brentwood', 'Danville', 'Martinez', 'Oakley', 'Pleasant Hill', 'San Pablo', 'Hercules', 'Lafayette', 'Orinda', 'Pinole', 'Moraga', 'El Cerrito', 'San Anselmo']"""
+
+    matches = re.findall(r'\[([^\]]*)\]', text)
