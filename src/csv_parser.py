@@ -26,7 +26,7 @@ def csv_parser(target, county, placeData):
     cityName = [city for city in placeData]
 
     # Write data
-    for target_info in placeData.values():
+    for city, target_info in placeData.items():
 
         # if no website information, then filter out
 
@@ -44,6 +44,9 @@ def csv_parser(target, county, placeData):
                 continue
 
             if place.get("internationalPhoneNumber", "") == "":
+                continue
+
+            if place.get("formattedAddress", "") == "" or city not in place["formattedAddress"]:
                 continue
 
             display_name.append(place["displayName"]["text"])

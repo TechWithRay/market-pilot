@@ -10,6 +10,16 @@ Navigating through marketing data can be overwhelming, often requiring extensive
 Google map text search ---> get id --> get details
 ```
 
+### Usage
+
+```
+python .\main.py --target church --county "napa county" --state california
+
+python .\main.py --target "luxury retirement community" --county "napa county" --state california
+
+python .\main.py --target "physician" --county "napa county" --state california
+```
+
 ### Roadmap
 
 - [ ] Integration of ChatGPT or other open-source LLMs (Maybe)

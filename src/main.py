@@ -24,7 +24,8 @@ def openai_call(query):
         model="gpt-3.5-turbo-0613",
         messages=[
             {
-                "role": "user", "content": "what are the cities in " + str({query}) + "in a format such as: [ 'a', 'b']"
+                "role": "user", "content": "what are the main cities & towns in " + str({query}) + "in a format such as: [ 'a', 'b'] with the decreasing order by populations." 
+                + "please donot show communities or census-designated places"
             }
         ]
     )
@@ -43,6 +44,8 @@ if __name__ == "__main__":
 
     text = response.choices[0].message.content
 
+    print(text, "\n")
+
     matches = re.findall(r'\[([^\]]*)\]', text)
 
     # Get the first match (assuming there's only one)
@@ -54,13 +57,15 @@ if __name__ == "__main__":
 
     print(cities)
 
-
     all_info = {}
 
     for city in cities:
         place_info = get_place_info(target, city, county, state)
 
-        all_info[f"{city}"] = place_info["places"]
+        try:
+            all_info[f"{city}"] = place_info["places"]
+        except:
+            pass
 
     all_info = json.dumps(all_info)
 
